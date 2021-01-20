@@ -8,8 +8,6 @@ const doOcr = async (image: string, lang: string): Promise<string> => {
 
     try {
         const res = await worker.recognize(image);
-        console.log(res.data.confidence);
-        console.log(res.data.text);
         return res.data.text;
     } catch (e) {
         console.log(e);
